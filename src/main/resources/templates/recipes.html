@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Recipes</title>
+</head>
+<body>
+<!--/*@thymesVar id="recipe" type="tost.springframework.recipe.mmrecipe.domain.Recipe"*/-->
+
+<h2 th:text="'Recipes'">Owners List</h2>
+<table>
+    <thead>
+    <tr>
+        <th style="width: 150px; text-align: left">Id</th>
+        <th style="width: 300px; text-align: left">Description</th>
+        <th style="width: 150px; text-align: left">PrepTime</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="recipe : ${recipes}">
+        <td th:text="${recipe.getId()}">1</td>
+        <td th:text="${recipe.getDescription()}">Chocolate Cake</td>
+        <td th:text="${recipe.getPrepTime()}">30</td>
+    </tr>
+    </tbody>
+</table>
